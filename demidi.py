@@ -113,20 +113,19 @@ def demidi(midi_dir, data_dir, out_dir, include_resolutions, tick_max, generate_
             gen_vocab(biggest_tick, include_resolutions=include_resolutions, resolutions=resolutions)
 
 def main(args):
-    if args.midi_dir is None or args.data_dir is None or args.out_dir is None:
+    if args.midi_dir is None or args.data_dir is None:
         parser.print_help()
         return 0
 
-    demidi(args.midi_dir, args.data_dir, args.out_dir, args.include_resolutions, args.tick_max, args.generate_vocab)
+    demidi(args.midi_dir, args.data_dir, args.include_resolutions, args.tick_max, args.generate_vocab)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Flatten midi files and generate vocab for training neural networks. More info at https://github.com/stephwag/midi-rnn')
     parser.add_argument('--mididir', metavar='-M', dest='midi_dir', default=None,
                        help='Absolute path to data directory')
-    parser.add_argument('--datadir', metavar='-D', dest='data_dir', default=None,
-                       help='Absolute path to data directory')
+    parser.add_argument('--outdir', metavar='-O', dest='data_dir', default=None,
+                       help='Absolute path to output directory')
 
-    parser.add_argument('--outdir', metavar='-O', dest='out_dir', default=None, help='Absolute path to output directory')
     parser.add_argument('--include-resolutions', action='store_true', dest='include_resolutions', help='Midi resolution of the out file (default: 96)')
     parser.add_argument('--vocab', dest='generate_vocab', action='store_true', help='Generate vocab (default: false)')
 
