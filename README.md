@@ -8,7 +8,7 @@ python3 demidi.py --mididir "/path/to/your/midis" --outdir "/path/to/output"
 
 Run `remidi.py` to create a midi file that uses the same syntax
 ```
-python3 --datafile "/path/to/datafile.txt" --outfile "/path/to/outfile.mid"
+python3 remidi.py --datafile "/path/to/datafile.txt" --outfile "/path/to/outfile.mid"
 ```
 
 ### Samples
