@@ -42,7 +42,7 @@ def gen_vocab(tick_max, include_resolutions = False, resolutions = False):
 
     print("Generated vocab.json in {}".format(os.path.dirname(os.path.realpath('vocab.json'))))
 
-def demidi(midi_dir, data_dir, out_dir, include_resolutions, tick_max, generate_vocab):
+def demidi(midi_dir, data_dir, include_resolutions, tick_max, generate_vocab):
     midifiles = []
     for root, dirs, filenames in os.walk(midi_dir):
         for f in filenames:
@@ -88,7 +88,7 @@ def demidi(midi_dir, data_dir, out_dir, include_resolutions, tick_max, generate_
                         if e.tick > biggest_tick:
                             biggest_tick = e.tick
 
-                    if e.__class__.__name__ not in ['InstrumentNameEvent', 'MarkerEvent', 'TrackNameEvent', 'TimeSignatureEvent', 'SetTempoEvent', 'EndOfTrackEvent', 'CopyrightMetaEvent', 'KeySignatureEvent']:
+                    if e.__class__.__name__ not in ['InstrumentNameEvent', 'MarkerEvent', 'TrackNameEvent', 'TimeSignatureEvent', 'SetTempoEvent', 'EndOfTrackEvent', 'CopyrightMetaEvent', 'KeySignatureEvent', 'SmpteOffsetEvent']:
                         word += str(e.channel) + 'c'
                     else:
                         print(e)
