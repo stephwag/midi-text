@@ -23,12 +23,17 @@ def remidi(data_file, out_file, resolution=96):
         textdata = f.read().split(" ")
 
     pattern = midi.Pattern()
+    start_index = 0
 
-    pattern.resolution = resolution
+    try:
+        pattern.resolution = int(textdata[0])
+        start_index = 1
+    except:
+        pattern.resolution = resolution
 
     tracks = {}
 
-    for index in range(0, len(textdata)):
+    for index in range(start_index, len(textdata)):
 
         t = textdata[index]
         result = t
