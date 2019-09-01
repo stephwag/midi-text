@@ -126,7 +126,7 @@ if __name__ == "__main__":
     parser.add_argument('--outdir', metavar='-O', dest='data_dir', default=None,
                        help='Absolute path to output directory')
 
-    parser.add_argument('--include-resolutions', action='store_true', dest='include_resolutions', help='Midi resolution of the out file (default: 96)')
+    parser.add_argument('--include-resolution', action='store_true', dest='include_resolutions', help='Midi resolution of the out file (default: 96)')
     parser.add_argument('--vocab', dest='generate_vocab', action='store_true', help='Generate vocab (default: false)')
 
     parser.add_argument('--tickmax', metavar='-T', dest='tick_max', nargs=1, default=-1, type=int,
