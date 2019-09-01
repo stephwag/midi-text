@@ -21,7 +21,7 @@ It will be converted to this in text format
 1NoteOnEvent8t0c66d83d
 ```
 
-Using `--include-resolution` will append the [resolution](https://en.wikipedia.org/wiki/Pulses_per_quarter_note) to the beginning of the file. If you don't use this option, then it's recommended you use `--resolution` with `remidi.py` when converting text back to midis.
+Using `--include-resolution` will append the [resolution](https://en.wikipedia.org/wiki/Pulses_per_quarter_note) to the beginning of the file. This is useful if you plan to train with midis that have different resolutions (if you're not sure, try running it and see if the number at the beginning of the text files are different). If you don't use that option (e.g. all resolutions are the same), it's recommended you use `--resolution` with `remidi.py` when converting text back to midis.
 
 ### Samples
 
